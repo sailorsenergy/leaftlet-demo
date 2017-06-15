@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Quick Start - Leaflet</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
+
+    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+</head>
+<body>
+
+
+
+<div id="mapid" style="width: 1000px; height: 600px;"></div>
+<script>
+
+    var mymap = L.map('mapid').setView([27.791668, -97.347116], 9);
+
+    var baseLayers = {};
+
+    // Stamen layers
+    baseLayers['Stamen Watercolor'] = new L.StamenTileLayer("watercolor");
+    baseLayers['Stamen Watercolor'].addTo(mymap);
+    baseLayers['Stamen Terrain'] = new L.StamenTileLayer("terrain");
+    baseLayers['Stamen Toner'] = new L.StamenTileLayer("toner");
+
+    L.control.layers(baseLayers).addTo(mymap);
+
+</script>
+
+</body>
+</html>
